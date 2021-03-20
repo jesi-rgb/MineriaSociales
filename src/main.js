@@ -41,7 +41,6 @@ const getAccessToken = async () => {
 };
 
 async function crawlNetwork(artist_id, step) {
-  await new Promise((r) => setTimeout(r, 5000));
   spotifyApi.getArtistRelatedArtists(artist_id).then(
     async function (data) {
       //console.log(data.body.artists.map((a) => a.id));
@@ -55,7 +54,13 @@ async function crawlNetwork(artist_id, step) {
         return;
       }
 
-      artists_ids.map((a) => crawlNetwork(a, step));
+      for (let id of artists_ids) {
+        await new Promise((r) => setTimeout(r, 5000));
+        console.log(id);
+        crawlNetwork(id, step);
+      }
+
+      // artists_ids.map((a) => crawlNetwork(a, step));
     },
     function (err) {
       console.error(err);
