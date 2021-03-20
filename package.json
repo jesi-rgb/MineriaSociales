@@ -1,0 +1,19 @@
+{
+  "name": "mineriasociales",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm src/main.js"
+  },
+  "author": "Jesús Rascón",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "isomorphic-fetch": "^3.0.0",
+    "querystring": "^0.2.1",
+    "spotify-web-api-node": "^5.0.2"
+  }
+}
